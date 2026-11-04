@@ -55,11 +55,26 @@ docker compose down -v
 O comando com `-v` remove os dados locais do banco e deve ser usado somente
 quando essa perda for intencional.
 
-## Serviços da aplicação
+## Backend
 
-O backend NestJS e o frontend React serão adicionados nos próximos ciclos. A
-configuração definitiva incluirá comandos próprios para instalar dependências,
-executar migrations, iniciar API, iniciar frontend, rodar testes e gerar build.
+Instale as dependências e inicie a API em modo de desenvolvimento:
+
+```powershell
+Set-Location backend
+npm.cmd install
+npm.cmd run start:dev
+```
+
+Quando a API estiver em execução, verifique a conexão com o banco em:
+
+```text
+http://localhost:3000/health
+```
+
+Também estão disponíveis os comandos `npm.cmd run build`,
+`npm.cmd run typecheck`, `npm.cmd test` e `npm.cmd run format:check`.
+
+O frontend React será adicionado em um próximo ciclo.
 
 ## Segurança
 

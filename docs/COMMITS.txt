@@ -201,6 +201,32 @@ REGISTROS REALIZADOS
     Observacoes:
     - O hash completo pode ser confirmado no historico Git.
 
+05. Commit: 3915a451d5a7eb71e9eda768481ac88a8497c058
+    Mensagem: chore(infra): adiciona ambiente local com PostgreSQL e configuracoes
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Docker Compose com PostgreSQL 16 Alpine, volume persistente e healthcheck.
+    - Variaveis de ambiente de exemplo e guia de desenvolvimento local.
+    - README e arquitetura atualizados com a infraestrutura disponível.
+
+    Arquivos ou modulos principais:
+    - docker-compose.yml
+    - .env.example
+    - docs/LOCAL-DEVELOPMENT.md
+    - README.md
+    - docs/ARCHITECTURE.md
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - Verificacao estatica das chaves essenciais do Compose.
+    - Container PostgreSQL iniciado e confirmado pelo usuario com Docker Desktop.
+
+    Observacoes:
+    - O hash deste commit foi registrado no ciclo seguinte.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

@@ -60,11 +60,15 @@ Pré-requisitos: Node.js 20 ou superior, npm e Docker Desktop com Docker Compose
 Copy-Item .env.example .env
 docker compose up -d postgres
 docker compose ps
+
+Set-Location backend
+npm.cmd install
+npm.cmd run start:dev
 ```
 
 As instruções detalhadas estão em [Desenvolvimento local](docs/LOCAL-DEVELOPMENT.md).
-Os comandos de backend, frontend, migrations, testes e build serão adicionados
-conforme os serviços forem implementados.
+Com o backend em execução, a verificação de saúde estará disponível em
+`http://localhost:3000/health`.
 
 ## Qualidade e histórico
 

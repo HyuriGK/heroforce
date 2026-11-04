@@ -45,9 +45,13 @@ backend/src/
 ├── users/
 ├── projects/
 ├── database/
+├── health/
 ├── common/
 └── main.ts
 ```
+
+O módulo `health` é a primeira parte implementada da API. Ele verifica a
+conectividade com o PostgreSQL por meio de `SELECT 1` e expõe `GET /health`.
 
 ## Organização prevista do frontend
 

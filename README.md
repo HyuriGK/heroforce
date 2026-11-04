@@ -47,6 +47,8 @@ commits pequenos e rastreáveis.
 
 ## Documentação
 
+- [Instruções para agentes de IA](AGENTS.md)
+- [Especificação canônica do projeto](docs/SPEC.md)
 - [Decisões de arquitetura](docs/ARCHITECTURE.md)
 - [Rastreabilidade dos commits](docs/COMMITS.txt)
 

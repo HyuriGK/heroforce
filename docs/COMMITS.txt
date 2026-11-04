@@ -49,6 +49,9 @@ Os itens abaixo sao um plano de trabalho e permanecem como "planejado" ate que
 o commit correspondente seja criado e validado. A ordem pode ser ajustada se a
 implementacao exigir, mas qualquer alteracao deve ser documentada neste arquivo.
 
+00. docs(spec): cria especificacao canonica e instrucoes do agente
+    Codigo previsto: AGENTS.md, docs/SPEC.md e links de documentacao no README.
+
 01. chore(repo): inicializa estrutura do projeto e padroes de qualidade
     Codigo previsto: estrutura monorepo, configuracoes basicas, Gitignore,
     editorconfig e scripts iniciais.

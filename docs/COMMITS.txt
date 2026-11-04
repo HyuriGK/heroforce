@@ -136,6 +136,29 @@ REGISTROS REALIZADOS
     - O commit foi criado localmente na branch main.
     - O remote do GitHub ainda nao foi configurado.
 
-Os proximos commits serao adicionados a este bloco com os hashes reais depois
-de cada implementacao e validacao.
+02. Commit: 8c4ff09826a814c1007f1a17269dfeefb2e2d954
+    Mensagem: docs(repo): registra primeiro commit
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Atualizacao deste arquivo com o registro completo do primeiro commit.
+    - Inclusao de hash, arquivos alterados, validacoes e observacoes do ciclo.
+
+    Arquivos ou modulos principais:
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - git status: branch main limpa apos o commit.
+
+    Observacoes:
+    - O hash deste commit foi registrado no commit seguinte, pois ele so existe
+      depois que a operacao de commit e concluida.
+
+Regra de atualizacao
+--------------------
+O commit mais recente sera registrado no ciclo seguinte, depois que seu hash
+real estiver disponivel. Dessa forma, o arquivo nunca inventa hashes e mantem
+o historico verificavel com `git log`.
 

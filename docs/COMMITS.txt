@@ -107,6 +107,35 @@ implementacao exigir, mas qualquer alteracao deve ser documentada neste arquivo.
 
 REGISTROS REALIZADOS
 ====================
-Ainda nao ha commits realizados. Este bloco sera preenchido durante a
-implementacao, sempre com o hash e a mensagem reais usados no Git.
+01. Commit: cdfa600a43dda5f527c9dff8c6cd06d41e6fde65
+    Mensagem: chore(repo): inicializa estrutura do projeto e padroes de qualidade
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Estrutura inicial do repositorio para backend, frontend e documentacao.
+    - Padroes de editor, normalizacao de arquivos e regras de ignorados do Git.
+    - README inicial com objetivo, stack planejada e criterios de qualidade.
+    - Decisoes iniciais de arquitetura para usuarios, projetos e autorizacao.
+
+    Arquivos ou modulos principais:
+    - .editorconfig
+    - .gitattributes
+    - .gitignore
+    - README.md
+    - docs/ARCHITECTURE.md
+    - docs/COMMITS.txt
+    - backend/.gitkeep
+    - frontend/.gitkeep
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - git status: branch main limpa apos o commit.
+
+    Observacoes:
+    - O commit foi criado localmente na branch main.
+    - O remote do GitHub ainda nao foi configurado.
+
+Os proximos commits serao adicionados a este bloco com os hashes reais depois
+de cada implementacao e validacao.
 

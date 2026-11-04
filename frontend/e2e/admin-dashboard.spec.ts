@@ -50,12 +50,12 @@ test("administrator creates and removes a project through the interface", async 
   await page.getByLabel("Nome do projeto").fill(projectName);
   const responsibleSelect = page.getByLabel("Herói responsável");
   const heroOption = responsibleSelect
-    .locator("option")
-    .filter({ hasText: "Heroi E2E HeroForce" });
+    .locator("option:not([value=''])")
+    .first();
   const heroId = await heroOption.getAttribute("value");
 
   if (!heroId) {
-    throw new Error("Herói de demonstração não encontrado no formulário.");
+    throw new Error("Nenhum herói disponível para receber o projeto de teste.");
   }
 
   await responsibleSelect.selectOption(heroId);

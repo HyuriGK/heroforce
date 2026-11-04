@@ -75,21 +75,28 @@ O Swagger é configurado no bootstrap da aplicação. A especificação é gerad
 partir dos controllers e DTOs, usa o esquema Bearer JWT chamado `access-token`
 e fica disponível em `/docs`, com a versão JSON em `/docs-json`.
 
-## Organização prevista do frontend
+## Organização do frontend
 
 ```text
 frontend/src/
-├── components/
-├── features/
-│   ├── auth/
-│   └── projects/
-├── layouts/
-├── pages/
-├── routes/
-├── services/
-├── types/
-└── main.tsx
+├── components/  # layout, marca e proteção de rota
+├── contexts/    # sessão autenticada
+├── pages/       # login, cadastro, dashboard e formulário
+├── services/    # cliente REST e endpoints de projetos
+├── types/       # contratos da API
+├── utils/       # regras de apresentação e testes puros
+├── App.tsx       # roteamento e composição da aplicação
+└── main.tsx      # bootstrap React
 ```
+
+O `AuthProvider` restaura a sessão em `GET /auth/me` e remove o token local
+quando ele deixa de ser válido. `RequireAuth` restringe a área autenticada e
+`RequireAdmin` melhora a experiência ao impedir acesso às telas administrativas;
+ambos complementam, mas não substituem, os guards da API.
+
+O cliente HTTP centraliza o envio do JWT, a URL configurável por ambiente e a
+normalização de erros. As páginas consomem contratos tipados e mantêm estados
+explícitos de carregamento, vazio e falha.
 
 ## Critérios de implementação
 

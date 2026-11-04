@@ -113,6 +113,30 @@ O seed exige todas as variáveis `ADMIN_*`, recusa e-mails já existentes e nunc
 exibe a senha. Feche o terminal ou remova as variáveis de ambiente após concluir
 o procedimento.
 
+## Frontend
+
+Com o backend em execução, abra outro terminal e execute:
+
+```powershell
+Set-Location frontend
+Copy-Item .env.example .env
+npm.cmd install
+npm.cmd run dev
+```
+
+A aplicação ficará disponível em `http://localhost:5173`. O frontend usa
+`VITE_API_URL=http://localhost:3000` por padrão. Mude essa variável apenas no
+arquivo `frontend/.env` local quando a API estiver em outro endereço.
+
+Os comandos de validação do frontend são:
+
+```powershell
+npm.cmd run typecheck
+npm.cmd test
+npm.cmd run build
+npm.cmd run format:check
+```
+
 ## Projetos
 
 Endpoints de projetos exigem JWT. Heróis recebem somente seus próprios
@@ -123,7 +147,9 @@ As metas `agility`, `enchantment`, `efficiency`, `excellence`, `transparency` e
 `ambition` devem ser inteiros entre 0 e 100. O campo `progress` retornado pela
 API é a média arredondada dessas seis metas e não é gravado no banco.
 
-O frontend React será adicionado em um próximo ciclo.
+O frontend React disponibiliza login, cadastro de herói, dashboard com filtros
+e formulário administrativo para projetos. A UI trata carregamento, lista vazia
+e erro; as permissões continuam sendo confirmadas obrigatoriamente pela API.
 
 ## Segurança
 

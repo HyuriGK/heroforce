@@ -17,10 +17,10 @@ metas relacionadas aos valores da HeroForce:
 - Transparência
 - Ambição
 
-## Stack planejada
+## Stack
 
 - Backend: NestJS, TypeScript, TypeORM e PostgreSQL
-- Frontend: ReactJS, TypeScript e interface responsiva
+- Frontend: ReactJS, TypeScript, Vite e interface responsiva
 - Autenticação: JWT e bcrypt
 - Documentação: Swagger
 - Ambiente local: Docker Compose
@@ -41,9 +41,10 @@ heroforce/
 
 ## Status do desenvolvimento
 
-O repositório está na etapa de preparação da fundação. A implementação do
-backend, frontend, banco de dados, autenticação e dashboard será adicionada em
-commits pequenos e rastreáveis.
+O portal possui API NestJS documentada por Swagger, PostgreSQL em Docker,
+autenticação JWT e frontend React responsivo. Heróis podem criar a conta,
+entrar e acompanhar os projetos sob sua responsabilidade. Administradores têm
+acesso a filtros, criação, edição e exclusão de projetos.
 
 ## Documentação
 
@@ -66,6 +67,19 @@ npm.cmd install
 npm.cmd run migration:run
 npm.cmd run start:dev
 ```
+
+Em outro terminal, inicie o frontend:
+
+```powershell
+Set-Location frontend
+Copy-Item .env.example .env
+npm.cmd install
+npm.cmd run dev
+```
+
+Abra `http://localhost:5173`. O frontend aponta para `http://localhost:3000`
+por padrão. Se a API usar outra URL, altere somente `VITE_API_URL` no arquivo
+`frontend/.env` local; ele é ignorado pelo Git.
 
 As instruções detalhadas estão em [Desenvolvimento local](docs/LOCAL-DEVELOPMENT.md).
 Com o backend em execução, a verificação de saúde estará disponível em
@@ -97,6 +111,15 @@ Após instalar dependências, execute `npm.cmd run migration:run` dentro de
 Para criar uma conta administrativa local de forma controlada, defina as quatro
 variáveis `ADMIN_*` presentes em `.env.example` no seu `.env` local e execute
 `npm.cmd run seed:admin` dentro de `backend`.
+
+No frontend, os comandos de qualidade são:
+
+```powershell
+npm.cmd run typecheck
+npm.cmd test
+npm.cmd run build
+npm.cmd run format:check
+```
 
 ## Qualidade e histórico
 

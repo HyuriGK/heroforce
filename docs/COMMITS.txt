@@ -342,6 +342,57 @@ REGISTROS REALIZADOS
     - A documentação usa o módulo oficial @nestjs/swagger.
     - O hash deste commit foi registrado no ciclo seguinte.
 
+10. Commit: 4375dad
+    Mensagem: docs(api): corrige instrucao de autorizacao Swagger
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Correcao da instrucao de uso do botao Authorize para informar somente o JWT.
+    - Alinhamento entre o guia local e o comportamento do Swagger Bearer.
+
+    Arquivos ou modulos principais:
+    - docs/COMMITS.txt
+    - docs/LOCAL-DEVELOPMENT.md
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - Revisao manual da instrucao no Swagger local.
+
+    Observacoes:
+    - A interface Swagger adiciona o prefixo Bearer automaticamente.
+
+11. Commit: 5e4d091
+    Mensagem: feat(web): implementa portal React HeroForce
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Aplicacao React com Vite, TypeScript estrito, roteamento e cliente REST tipado.
+    - Cadastro, login, restauracao de sessao JWT e protecao de rotas por perfil.
+    - Dashboard responsivo com resumo, filtros, metas, progresso e estados de UI.
+    - Formulario administrativo para criar e editar projetos e confirmacao de exclusao.
+    - Teste automatizado do calculo de progresso e scripts de qualidade do frontend.
+
+    Arquivos ou modulos principais:
+    - frontend/src/App.tsx
+    - frontend/src/contexts/auth-context.tsx
+    - frontend/src/pages/
+    - frontend/src/services/
+    - frontend/src/styles.css
+    - frontend/package.json
+
+    Validacoes executadas:
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd test: 2 testes aprovados.
+    - npm.cmd run build: aprovado.
+    - npm.cmd run format:check: aprovado.
+    - GET http://127.0.0.1:5173/login: HTTP 200 confirmado.
+
+    Observacoes:
+    - A autorizacao permanece no backend; a protecao de rotas no cliente melhora a UX.
+    - A inspecao automatizada visual nao estava disponivel no ambiente de execucao.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

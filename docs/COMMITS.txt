@@ -1,0 +1,112 @@
+HEROForce - RASTREABILIDADE DOS COMMITS
+=======================================
+
+Objetivo
+--------
+Este arquivo registra, em ordem cronologica, cada commit realizado no projeto.
+Ele deve ser atualizado somente depois que o commit existir de fato no repositorio.
+
+Padrao adotado
+--------------
+- Conventional Commits: tipo(escopo): descricao curta
+- Um commit deve representar uma mudanca coesa e revisavel.
+- Cada commit deve compilar ou passar pelas validacoes aplicaveis ao seu estagio.
+- Nao serao registrados commits ficticios ou alteracoes nao enviadas ao repositorio.
+- O README deve permanecer alinhado com o estado funcional documentado aqui.
+
+Tipos esperados
+---------------
+- feat: nova funcionalidade
+- fix: correcao de defeito
+- test: inclusao ou ajuste de testes
+- docs: documentacao
+- refactor: reorganizacao sem mudanca de comportamento
+- chore: configuracao, dependencias ou tarefas de manutencao
+- style: formatacao sem mudanca de comportamento
+
+Formato de cada registro
+------------------------
+Commit: <hash curto>
+Mensagem: <mensagem exata usada no commit>
+Data: <AAAA-MM-DD>
+Status: realizado | planejado
+
+Codigo incluido:
+- <descricao objetiva das alteracoes de codigo>
+
+Arquivos ou modulos principais:
+- <arquivos ou modulos>
+
+Validacoes executadas:
+- <comandos e resultado>
+
+Observacoes:
+- <decisoes tecnicas, limitacoes ou informacoes relevantes>
+
+PLANO INICIAL DE COMMITS
+========================
+Os itens abaixo sao um plano de trabalho e permanecem como "planejado" ate que
+o commit correspondente seja criado e validado. A ordem pode ser ajustada se a
+implementacao exigir, mas qualquer alteracao deve ser documentada neste arquivo.
+
+01. chore(repo): inicializa estrutura do projeto e padroes de qualidade
+    Codigo previsto: estrutura monorepo, configuracoes basicas, Gitignore,
+    editorconfig e scripts iniciais.
+
+02. chore(infra): adiciona ambiente local com PostgreSQL e configuracoes
+    Codigo previsto: Docker Compose, variaveis de ambiente de exemplo e
+    configuracao segura para desenvolvimento.
+
+03. feat(api): cria base NestJS com TypeScript, TypeORM e PostgreSQL
+    Codigo previsto: app modular, configuracao, conexao com banco, migrations
+    e tratamento inicial de erros.
+
+04. feat(api): implementa usuarios, papeis e autenticacao JWT
+    Codigo previsto: entidade User, cadastro, login, senha com bcrypt, JWT,
+    guards, validacao e papeis hero/admin.
+
+05. feat(api): implementa projetos, metas e relacionamento com responsavel
+    Codigo previsto: entidade Project, status, seis metas de valores, calculo
+    de progresso e relacionamento User-Project.
+
+06. feat(api): adiciona autorizacao e CRUD de projetos
+    Codigo previsto: endpoints protegidos, regras de admin, filtros por status
+    e heroi, DTOs, validacao e respostas consistentes.
+
+07. docs(api): publica documentacao REST com Swagger
+    Codigo previsto: configuracao Swagger, modelos, autenticacao Bearer e
+    exemplos para avaliacao da API.
+
+08. feat(web): cria base React com TypeScript e identidade visual HeroForce
+    Codigo previsto: estrutura do frontend, roteamento, componentes comuns,
+    layout responsivo, tema visual e cliente HTTP.
+
+09. feat(web): implementa cadastro, login e sessao autenticada
+    Codigo previsto: telas, formularios, validacoes, armazenamento seguro do
+    estado de sessao e protecao de rotas.
+
+10. feat(web): implementa dashboard de projetos e filtros
+    Codigo previsto: listagem, cards de resumo, progresso, status, responsavel,
+    filtros e estados de carregamento, vazio e erro.
+
+11. feat(web): implementa formulario administrativo de projetos
+    Codigo previsto: criacao e edicao para admins, metas, selecao de heroi e
+    feedback visual das operacoes.
+
+12. test: adiciona testes automatizados do backend e frontend
+    Codigo previsto: testes de autenticacao, autorizacao, projetos, filtros e
+    componentes ou fluxos criticos da interface.
+
+13. docs(repo): finaliza README e guia de avaliacao
+    Codigo previsto: instrucoes de instalacao, ambiente, migrations, seed,
+    comandos, arquitetura, credenciais de demonstracao, Swagger e deploy.
+
+14. chore(release): executa validacao final e prepara entrega
+    Codigo previsto: revisao de qualidade, build de producao, verificacao de
+    responsividade, ajustes finais e informacoes de entrega.
+
+REGISTROS REALIZADOS
+====================
+Ainda nao ha commits realizados. Este bloco sera preenchido durante a
+implementacao, sempre com o hash e a mensagem reais usados no Git.
+

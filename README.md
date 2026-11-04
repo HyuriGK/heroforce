@@ -79,9 +79,19 @@ Com o backend em execução, a verificação de saúde estará disponível em
 | `POST` | `/auth/register` | Cadastra um herói e retorna JWT. |
 | `POST` | `/auth/login` | Autentica um usuário e retorna JWT. |
 | `GET` | `/auth/me` | Retorna o usuário autenticado; exige Bearer token. |
+| `GET` | `/users/heroes` | Lista heróis elegíveis como responsáveis; admin only. |
+| `GET` | `/projects` | Lista projetos visíveis conforme o papel do usuário. |
+| `GET` | `/projects/:id` | Detalha um projeto permitido ao usuário. |
+| `POST` | `/projects` | Cria projeto; admin only. |
+| `PATCH` | `/projects/:id` | Atualiza projeto; admin only. |
+| `DELETE` | `/projects/:id` | Exclui projeto; admin only. |
 
 Após instalar dependências, execute `npm.cmd run migration:run` dentro de
 `backend` antes de testar cadastro ou login.
+
+Para criar uma conta administrativa local de forma controlada, defina as quatro
+variáveis `ADMIN_*` presentes em `.env.example` no seu `.env` local e execute
+`npm.cmd run seed:admin` dentro de `backend`.
 
 ## Qualidade e histórico
 

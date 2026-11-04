@@ -255,6 +255,35 @@ REGISTROS REALIZADOS
     - A porta 5433 foi usada apenas no arquivo .env local do usuario para evitar
       conflito de porta no Windows; o padrao versionado permanece 5432.
 
+07. Commit: 25716b3872c5dbcbf65d9f12dee8f17ed28c16e5
+    Mensagem: feat(api): implementa usuarios e autenticacao JWT
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Entidade User, papeis hero/admin e migration versionada de usuarios.
+    - Cadastro, login, JWT, rota protegida de perfil e bcrypt para senhas.
+    - DTOs com validacao e normalizacao de e-mail.
+    - Testes unitarios de autenticacao e documentacao de migrations.
+
+    Arquivos ou modulos principais:
+    - backend/src/auth/
+    - backend/src/users/
+    - backend/src/database/data-source.ts
+    - backend/src/database/migrations/1793750400000-CreateUsers.ts
+
+    Validacoes executadas:
+    - npm.cmd run migration:run: migration CreateUsers executada e sem pendencias.
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd run build: aprovado.
+    - npm.cmd test: 6 testes aprovados.
+    - GET /health: 200 e database up.
+    - GET /auth/me sem token: 401 conforme esperado.
+
+    Observacoes:
+    - O cadastro publico atribui apenas o papel hero.
+    - O hash deste commit foi registrado no ciclo seguinte.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

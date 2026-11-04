@@ -65,6 +65,12 @@ senha é armazenada apenas como hash bcrypt e a coluna não é selecionada nas
 consultas comuns. Migrations TypeORM são a única forma prevista de alterar o
 schema do banco.
 
+O módulo `projects` aplica regras de visibilidade no serviço: um herói só vê os
+projetos sob sua responsabilidade, enquanto um administrador pode consultar o
+conjunto completo e filtrá-lo. O progresso não é persistido; é calculado pela
+média arredondada das seis metas. O `RolesGuard` centraliza a autorização por
+papel e protege as operações administrativas no backend.
+
 ## Organização prevista do frontend
 
 ```text

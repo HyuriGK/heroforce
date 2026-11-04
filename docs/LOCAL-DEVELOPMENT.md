@@ -89,7 +89,29 @@ Com a API em execução, os endpoints iniciais são:
   `Authorization: Bearer <accessToken>`.
 
 O cadastro público sempre cria um usuário com papel `hero`. Usuários `admin`
-serão criados por um fluxo controlado de seed em um próximo ciclo.
+devem ser criados pelo seed controlado, nunca pelo endpoint público:
+
+```powershell
+$env:ADMIN_NAME = 'Administrador HeroForce'
+$env:ADMIN_EMAIL = 'admin@example.com'
+$env:ADMIN_PASSWORD = 'troque-por-uma-senha-segura'
+$env:ADMIN_CHARACTER = 'Nick Fury'
+npm.cmd run seed:admin
+```
+
+O seed exige todas as variáveis `ADMIN_*`, recusa e-mails já existentes e nunca
+exibe a senha. Feche o terminal ou remova as variáveis de ambiente após concluir
+o procedimento.
+
+## Projetos
+
+Endpoints de projetos exigem JWT. Heróis recebem somente seus próprios
+projetos. Operações de criação, edição e exclusão, assim como a lista de heróis
+responsáveis, exigem token de administrador.
+
+As metas `agility`, `enchantment`, `efficiency`, `excellence`, `transparency` e
+`ambition` devem ser inteiros entre 0 e 100. O campo `progress` retornado pela
+API é a média arredondada dessas seis metas e não é gravado no banco.
 
 O frontend React será adicionado em um próximo ciclo.
 

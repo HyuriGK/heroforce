@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { QueryFailedError, Repository } from 'typeorm';
 
 import { User } from './entities/user.entity';
+import { UserRole } from './entities/user-role.enum';
 import { CreateUserInput } from './types/create-user.input';
 import { PublicUser } from './types/public-user.type';
 
@@ -44,6 +45,15 @@ export class UsersService {
 
   async findById(id: string): Promise<User | null> {
     return this.usersRepository.findOne({ where: { id } });
+  }
+
+  async findHeroes(): Promise<PublicUser[]> {
+    const heroes = await this.usersRepository.find({
+      where: { role: UserRole.HERO },
+      order: { name: 'ASC' },
+    });
+
+    return heroes.map((hero) => this.toPublicUser(hero));
   }
 
   toPublicUser(user: User): PublicUser {

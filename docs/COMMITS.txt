@@ -393,6 +393,31 @@ REGISTROS REALIZADOS
     - A autorizacao permanece no backend; a protecao de rotas no cliente melhora a UX.
     - A inspecao automatizada visual nao estava disponivel no ambiente de execucao.
 
+12. Commit: 6f5503e
+    Mensagem: docs(web): documenta execucao e rastreia portal
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - README atualizado com inicializacao e comandos de qualidade do frontend.
+    - Guia local e arquitetura atualizados para refletir a implementacao React.
+    - Registro verificavel dos commits Swagger e do portal web.
+
+    Arquivos ou modulos principais:
+    - README.md
+    - docs/ARCHITECTURE.md
+    - docs/LOCAL-DEVELOPMENT.md
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd test: 2 testes aprovados.
+    - npm.cmd run build: aprovado.
+
+    Observacoes:
+    - As instrucoes mantem variaveis de ambiente reais fora do controle de versao.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

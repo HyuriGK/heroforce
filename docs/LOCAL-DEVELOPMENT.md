@@ -62,6 +62,7 @@ Instale as dependências e inicie a API em modo de desenvolvimento:
 ```powershell
 Set-Location backend
 npm.cmd install
+npm.cmd run migration:run
 npm.cmd run start:dev
 ```
 
@@ -73,6 +74,22 @@ http://localhost:3000/health
 
 Também estão disponíveis os comandos `npm.cmd run build`,
 `npm.cmd run typecheck`, `npm.cmd test` e `npm.cmd run format:check`.
+
+As migrations devem ser executadas com `npm.cmd run migration:run` após o
+PostgreSQL estar saudável. Nunca use `synchronize: true` como substituto de
+migrations.
+
+## Autenticação local
+
+Com a API em execução, os endpoints iniciais são:
+
+- `POST http://localhost:3000/auth/register`;
+- `POST http://localhost:3000/auth/login`;
+- `GET http://localhost:3000/auth/me` com cabeçalho
+  `Authorization: Bearer <accessToken>`.
+
+O cadastro público sempre cria um usuário com papel `hero`. Usuários `admin`
+serão criados por um fluxo controlado de seed em um próximo ciclo.
 
 O frontend React será adicionado em um próximo ciclo.
 

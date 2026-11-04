@@ -63,12 +63,25 @@ docker compose ps
 
 Set-Location backend
 npm.cmd install
+npm.cmd run migration:run
 npm.cmd run start:dev
 ```
 
 As instruções detalhadas estão em [Desenvolvimento local](docs/LOCAL-DEVELOPMENT.md).
 Com o backend em execução, a verificação de saúde estará disponível em
 `http://localhost:3000/health`.
+
+## API disponível
+
+| Método | Rota | Descrição |
+| --- | --- | --- |
+| `GET` | `/health` | Verifica a API e o PostgreSQL. |
+| `POST` | `/auth/register` | Cadastra um herói e retorna JWT. |
+| `POST` | `/auth/login` | Autentica um usuário e retorna JWT. |
+| `GET` | `/auth/me` | Retorna o usuário autenticado; exige Bearer token. |
+
+Após instalar dependências, execute `npm.cmd run migration:run` dentro de
+`backend` antes de testar cadastro ou login.
 
 ## Qualidade e histórico
 

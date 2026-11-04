@@ -227,6 +227,34 @@ REGISTROS REALIZADOS
     Observacoes:
     - O hash deste commit foi registrado no ciclo seguinte.
 
+06. Commit: e0415bf8d68b36d84c101a42e5348dd0e1dddbee
+    Mensagem: feat(api): cria base NestJS com TypeScript, TypeORM e PostgreSQL
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Base NestJS com TypeScript estrito, TypeORM e configuracao por ambiente.
+    - Endpoint GET /health com verificacao real da conectividade PostgreSQL.
+    - Testes unitarios iniciais e comandos de build, typecheck e formatacao.
+
+    Arquivos ou modulos principais:
+    - backend/src/app.module.ts
+    - backend/src/main.ts
+    - backend/src/health/
+    - backend/package.json
+    - backend/package-lock.json
+
+    Validacoes executadas:
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd run build: aprovado.
+    - npm.cmd test: 2 testes aprovados.
+    - npm.cmd run format:check: aprovado.
+    - GET /health confirmado pelo usuario com PostgreSQL ativo.
+
+    Observacoes:
+    - A porta 5433 foi usada apenas no arquivo .env local do usuario para evitar
+      conflito de porta no Windows; o padrao versionado permanece 5432.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

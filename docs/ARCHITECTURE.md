@@ -42,9 +42,15 @@ critério será documentado na API e refletido na interface.
 ```text
 backend/src/
 ├── auth/
+│   ├── dto/
+│   ├── guards/
+│   └── strategies/
 ├── users/
+│   ├── entities/
+│   └── types/
 ├── projects/
 ├── database/
+│   └── migrations/
 ├── health/
 ├── common/
 └── main.ts
@@ -52,6 +58,12 @@ backend/src/
 
 O módulo `health` é a primeira parte implementada da API. Ele verifica a
 conectividade com o PostgreSQL por meio de `SELECT 1` e expõe `GET /health`.
+
+O módulo `auth` concentra cadastro, login, emissão de JWT e validação de token.
+O módulo `users` contém a entidade de usuário e operações de persistência. A
+senha é armazenada apenas como hash bcrypt e a coluna não é selecionada nas
+consultas comuns. Migrations TypeORM são a única forma prevista de alterar o
+schema do banco.
 
 ## Organização prevista do frontend
 

@@ -438,6 +438,69 @@ REGISTROS REALIZADOS
     Observacoes:
     - Artefatos gerados nao devem influenciar a validacao de formatacao do fonte.
 
+14. Commit: a464b5c
+    Mensagem: docs(qa): registra validacao ponta a ponta local
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Roteiro reproduzivel para validar cadastro, perfis, CRUD e autorizacao.
+    - Registro do commit anterior de manutencao da formatacao.
+
+    Arquivos ou modulos principais:
+    - docs/LOCAL-DEVELOPMENT.md
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - Validacao ponta a ponta da API com administrador e heroi locais: aprovada.
+    - Confirmacao de 403 para operacoes administrativas executadas por heroi.
+
+    Observacoes:
+    - Dados de demonstracao permanecem somente no banco PostgreSQL local.
+
+15. Commit: 17cb447
+    Mensagem: fix(web): valida fluxos e refina interface operacional
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Interface redesenhada com foco operacional, hierarquia de dados e menos ornamentos.
+    - Campo de senha com associacao acessivel de label e controle de visibilidade separado.
+    - Testes E2E reais no Edge para login, edicao, criacao e exclusao de projeto.
+    - Configuracao separada de Vitest e Playwright, com artefatos de teste ignorados.
+
+    Arquivos ou modulos principais:
+    - frontend/src/styles.css
+    - frontend/src/pages/auth-page.tsx
+    - frontend/e2e/admin-dashboard.spec.ts
+    - frontend/playwright.config.ts
+
+    Validacoes executadas:
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd test: 2 testes aprovados.
+    - npm.cmd run test:e2e: 2 fluxos reais aprovados no Microsoft Edge local.
+    - npm.cmd run build e npm.cmd run format:check: aprovados.
+
+    Observacoes:
+    - Testes E2E recebem credenciais por variaveis de ambiente e nao persistem dados temporarios.
+
+16. Commit: e7efbeb
+    Mensagem: test(web): torna e2e independente do heroi de demonstracao
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Selecao do primeiro heroi disponivel no formulario E2E, sem depender de nome fixo.
+
+    Arquivos ou modulos principais:
+    - frontend/e2e/admin-dashboard.spec.ts
+
+    Validacoes executadas:
+    - npm.cmd run test:e2e: 2 fluxos reais aprovados no Microsoft Edge local.
+
+    Observacoes:
+    - O ambiente E2E precisa conter ao menos um heroi para criar um projeto.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

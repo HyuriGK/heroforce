@@ -137,6 +137,25 @@ npm.cmd run build
 npm.cmd run format:check
 ```
 
+### Teste E2E no navegador
+
+O teste E2E valida o fluxo real de um administrador: login, dashboard, abertura
+de edição, criação de projeto e exclusão do projeto temporário. Ele não possui
+credenciais versionadas; configure uma conta administrativa local antes de
+executá-lo:
+
+```powershell
+$env:E2E_ADMIN_EMAIL = 'admin@example.com'
+$env:E2E_ADMIN_PASSWORD = 'sua-senha-local'
+$env:E2E_BROWSER_EXECUTABLE = 'C:\caminho\para\o\navegador.exe'
+npm.cmd run test:e2e
+```
+
+No Windows, o executável do Microsoft Edge costuma estar em
+`C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`. Como
+alternativa, instale o Chromium do Playwright com `npx playwright install
+chromium` e omita `E2E_BROWSER_EXECUTABLE`.
+
 ## Projetos
 
 Endpoints de projetos exigem JWT. Heróis recebem somente seus próprios

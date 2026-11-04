@@ -117,9 +117,14 @@ No frontend, os comandos de qualidade são:
 ```powershell
 npm.cmd run typecheck
 npm.cmd test
+npm.cmd run test:e2e
 npm.cmd run build
 npm.cmd run format:check
 ```
+
+O teste E2E exige que a API e o frontend estejam em execução, além de uma
+conta administrativa local informada por variáveis de ambiente. O roteiro está
+documentado em [Desenvolvimento local](docs/LOCAL-DEVELOPMENT.md).
 
 ## Qualidade e histórico
 

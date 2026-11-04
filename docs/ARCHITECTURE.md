@@ -89,6 +89,10 @@ frontend/src/
 └── main.tsx      # bootstrap React
 ```
 
+Os testes E2E ficam em `frontend/e2e/` e exercitam o navegador contra a API
+local. Credenciais e o caminho do navegador são recebidos por variáveis de
+ambiente, para que nenhum segredo de demonstração seja versionado.
+
 O `AuthProvider` restaura a sessão em `GET /auth/me` e remove o token local
 quando ele deixa de ser válido. `RequireAuth` restringe a área autenticada e
 `RequireAdmin` melhora a experiência ao impedir acesso às telas administrativas;

@@ -75,3 +75,13 @@ frontend/src/
 - Testes para autenticação, autorização e regras principais de projetos.
 - Documentação atualizada junto com a evolução do código.
 
+## Ambiente local
+
+O PostgreSQL de desenvolvimento será executado por Docker Compose, usando um
+volume nomeado para preservar os dados entre reinicializações. Backend e
+frontend serão executados como processos de desenvolvimento em suas respectivas
+pastas, com variáveis compartilhadas pelo arquivo `.env` local.
+
+O arquivo `.env.example` documenta as variáveis necessárias sem expor segredos
+reais. A configuração de produção não deve reutilizar as credenciais locais.
+

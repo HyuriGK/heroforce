@@ -183,6 +183,24 @@ REGISTROS REALIZADOS
     - A especificacao passa a ser a fonte de verdade do desenvolvimento.
     - O hash deste commit foi registrado no ciclo seguinte.
 
+04. Commit: 12d943a
+    Mensagem: docs(repo): registra commit da especificacao
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Registro do commit que consolidou a especificacao e as instrucoes do agente.
+
+    Arquivos ou modulos principais:
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - git status: branch main limpa apos o commit.
+
+    Observacoes:
+    - O hash completo pode ser confirmado no historico Git.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

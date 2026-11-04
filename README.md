@@ -54,9 +54,17 @@ commits pequenos e rastreáveis.
 
 ## Execução local
 
-As instruções completas de instalação e execução serão atualizadas conforme os
-serviços forem adicionados ao projeto. O ambiente final terá comandos separados
-para backend, frontend, banco de dados, testes e build de produção.
+Pré-requisitos: Node.js 20 ou superior, npm e Docker Desktop com Docker Compose.
+
+```powershell
+Copy-Item .env.example .env
+docker compose up -d postgres
+docker compose ps
+```
+
+As instruções detalhadas estão em [Desenvolvimento local](docs/LOCAL-DEVELOPMENT.md).
+Os comandos de backend, frontend, migrations, testes e build serão adicionados
+conforme os serviços forem implementados.
 
 ## Qualidade e histórico
 

@@ -159,6 +159,30 @@ REGISTROS REALIZADOS
     - O hash deste commit foi registrado no commit seguinte, pois ele so existe
       depois que a operacao de commit e concluida.
 
+03. Commit: 00517cb4cb7479a9474f2e9712f9f46a449f1f38
+    Mensagem: docs(spec): cria especificacao canonica e instrucoes do agente
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - AGENTS.md com o fluxo obrigatório para solicitações orientadas por spec.
+    - docs/SPEC.md com requisitos, domínio, API, frontend e critérios de aceite.
+    - Links da especificação e das instruções no README.
+
+    Arquivos ou modulos principais:
+    - AGENTS.md
+    - docs/SPEC.md
+    - README.md
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - git diff --check: concluido sem erros de whitespace.
+    - Revisao dos titulos e secoes da especificacao.
+
+    Observacoes:
+    - A especificacao passa a ser a fonte de verdade do desenvolvimento.
+    - O hash deste commit foi registrado no ciclo seguinte.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

@@ -144,13 +144,12 @@ export function ProjectFormPage() {
             <ArrowLeft size={17} /> Voltar para projetos
           </Link>
           <p className="eyebrow">
-            {isEditing ? "Ajustar missão" : "Nova missão"}
+            {isEditing ? "Editar projeto" : "Novo projeto"}
           </p>
-          <h1>
-            {isEditing ? "Editar projeto heroico" : "Criar projeto heroico"}
-          </h1>
+          <h1>{isEditing ? "Editar projeto" : "Criar projeto"}</h1>
           <p>
-            Defina quem lidera a missão e torne cada valor da HeroForce visível.
+            Defina a responsabilidade, o status e os indicadores que compõem o
+            progresso.
           </p>
         </div>
         <div
@@ -282,7 +281,7 @@ export function ProjectFormPage() {
           >
             <Save size={18} />
             {isSubmitting
-              ? "Salvando missão..."
+              ? "Salvando..."
               : isEditing
                 ? "Salvar alterações"
                 : "Criar projeto"}

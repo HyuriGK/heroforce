@@ -128,17 +128,17 @@ export function DashboardPage() {
     <div className="dashboard-page">
       <header className="dashboard-header">
         <div>
-          <p className="eyebrow">Central de comando</p>
-          <h1>Projetos que movem a HeroForce</h1>
+          <p className="eyebrow">Projetos</p>
+          <h1>Visão geral</h1>
           <p>
             {isAdmin
-              ? "Acompanhe o portfólio, mantenha as metas visíveis e fortaleça cada missão."
+              ? "Acompanhe o portfólio, ajuste responsabilidades e mantenha o progresso atualizado."
               : `Olá, ${user?.name.split(" ")[0]}. Estes são os projetos sob sua responsabilidade.`}
           </p>
         </div>
         {isAdmin && (
           <Link to="/projects/new" className="primary-button header-action">
-            <Plus size={18} /> Novo projeto
+            <Plus size={18} /> Criar projeto
           </Link>
         )}
       </header>
@@ -147,7 +147,7 @@ export function DashboardPage() {
         <article className="summary-card summary-total">
           <span>Total visível</span>
           <strong>{projects.length}</strong>
-          <small>projetos no radar</small>
+          <small>projetos visíveis</small>
         </article>
         {summary.map(({ status, count }) => (
           <article className="summary-card" key={status}>
@@ -161,7 +161,7 @@ export function DashboardPage() {
       <section className="filter-panel" aria-label="Filtros de projetos">
         <div className="filter-heading">
           <Filter size={18} />
-          <span>Filtrar visão</span>
+          <span>Filtros</span>
         </div>
         <label>
           Status
@@ -235,8 +235,8 @@ export function DashboardPage() {
           <h2>Nenhum projeto encontrado</h2>
           <p>
             {isAdmin
-              ? "Ajuste os filtros ou crie a primeira missão para começar a acompanhar resultados."
-              : "Quando você for definido como responsável por uma missão, ela aparecerá aqui."}
+              ? "Ajuste os filtros ou crie o primeiro projeto para começar o acompanhamento."
+              : "Quando você for definido como responsável por um projeto, ele aparecerá aqui."}
           </p>
           {isAdmin && (
             <Link to="/projects/new" className="primary-button">

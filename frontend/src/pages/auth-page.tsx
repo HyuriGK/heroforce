@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import type { CSSProperties } from "react";
-import { ArrowRight, Eye, EyeOff, Sparkles } from "lucide-react";
+import { ArrowRight, Eye, EyeOff, FolderKanban } from "lucide-react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 
 import { Brand } from "../components/brand";
@@ -81,12 +81,12 @@ export function AuthPage({ mode }: AuthPageProps) {
         <Brand />
         <div className="auth-hero-copy">
           <p className="eyebrow">
-            <Sparkles size={15} /> Central de projetos heroicos
+            <FolderKanban size={15} /> Gestão de projetos
           </p>
-          <h1>Transforme valores em impacto mensurável.</h1>
+          <h1>Trabalho claro. Progresso visível.</h1>
           <p>
-            Acompanhe metas, responsáveis e o progresso dos projetos que movem a
-            HeroForce.
+            Um espaço para acompanhar entregas, responsáveis e os indicadores
+            que importam em cada projeto.
           </p>
         </div>
         <div className="value-grid" aria-label="Valores da HeroForce">
@@ -112,15 +112,15 @@ export function AuthPage({ mode }: AuthPageProps) {
         <div className="auth-card">
           <div className="auth-heading">
             <p className="eyebrow">
-              {isRegister ? "Junte-se ao time" : "Boas-vindas de volta"}
+              {isRegister ? "Novo perfil" : "Acesso ao portal"}
             </p>
             <h2>
-              {isRegister ? "Ative seu perfil heroico" : "Entre na sua central"}
+              {isRegister ? "Criar conta de herói" : "Entrar na HeroForce"}
             </h2>
             <p>
               {isRegister
-                ? "Escolha seu personagem e acompanhe os projetos sob sua responsabilidade."
-                : "Use suas credenciais para continuar sua missão."}
+                ? "Informe seus dados para acompanhar projetos sob sua responsabilidade."
+                : "Use seu e-mail e senha para acessar seus projetos."}
             </p>
           </div>
 
@@ -169,10 +169,11 @@ export function AuthPage({ mode }: AuthPageProps) {
               />
             </label>
 
-            <label>
-              Senha
+            <div className="auth-password-field">
+              <label htmlFor="password">Senha</label>
               <span className="password-input">
                 <input
+                  id="password"
                   required
                   type={showPassword ? "text" : "password"}
                   minLength={8}
@@ -193,7 +194,7 @@ export function AuthPage({ mode }: AuthPageProps) {
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </span>
-            </label>
+            </div>
 
             {error && (
               <p className="form-error" role="alert">
@@ -207,10 +208,10 @@ export function AuthPage({ mode }: AuthPageProps) {
               disabled={isSubmitting}
             >
               {isSubmitting
-                ? "Preparando missão..."
+                ? "Entrando..."
                 : isRegister
-                  ? "Criar perfil heroico"
-                  : "Entrar na HeroForce"}
+                  ? "Criar conta"
+                  : "Entrar"}
               <ArrowRight size={18} />
             </button>
           </form>

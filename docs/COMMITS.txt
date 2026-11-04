@@ -284,6 +284,36 @@ REGISTROS REALIZADOS
     - O cadastro publico atribui apenas o papel hero.
     - O hash deste commit foi registrado no ciclo seguinte.
 
+08. Commit: aa13b6097beaf57756cf16a9a2f1d33ee8aaf2e1
+    Mensagem: feat(api): adiciona CRUD de projetos e autorizacao admin
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Entidade Project, migration, seis metas validadas e calculo de progresso.
+    - CRUD com filtros, regras de visibilidade para herois e operacoes admin.
+    - RolesGuard, endpoint de herois elegiveis e seed controlado de admin.
+    - Testes de projetos e autorizacao por papel.
+
+    Arquivos ou modulos principais:
+    - backend/src/projects/
+    - backend/src/common/guards/roles.guard.ts
+    - backend/src/database/migrations/1793836800000-CreateProjects.ts
+    - backend/src/database/seeds/seed-admin.ts
+    - backend/src/users/users.controller.ts
+
+    Validacoes executadas:
+    - npm.cmd run migration:run: migration CreateProjects executada e sem pendencias.
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd run build: aprovado.
+    - npm.cmd test: 13 testes aprovados.
+    - GET /projects e GET /users/heroes sem token: 401 conforme esperado.
+
+    Observacoes:
+    - A conta administrativa exige seed controlado e nao pode ser criada pelo
+      endpoint de cadastro publico.
+    - O hash deste commit foi registrado no ciclo seguinte.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

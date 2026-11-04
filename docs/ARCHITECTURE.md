@@ -71,6 +71,10 @@ conjunto completo e filtrá-lo. O progresso não é persistido; é calculado pel
 média arredondada das seis metas. O `RolesGuard` centraliza a autorização por
 papel e protege as operações administrativas no backend.
 
+O Swagger é configurado no bootstrap da aplicação. A especificação é gerada a
+partir dos controllers e DTOs, usa o esquema Bearer JWT chamado `access-token`
+e fica disponível em `/docs`, com a versão JSON em `/docs-json`.
+
 ## Organização prevista do frontend
 
 ```text

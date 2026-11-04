@@ -72,6 +72,16 @@ Quando a API estiver em execução, verifique a conexão com o banco em:
 http://localhost:3000/health
 ```
 
+A documentação interativa pode ser acessada em:
+
+```text
+http://localhost:3000/docs
+```
+
+Para testar uma rota protegida, faça login pela própria documentação, copie o
+`accessToken` retornado e use o botão **Authorize** com o formato
+`Bearer <accessToken>`.
+
 Também estão disponíveis os comandos `npm.cmd run build`,
 `npm.cmd run typecheck`, `npm.cmd test` e `npm.cmd run format:check`.
 

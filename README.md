@@ -71,6 +71,11 @@ As instruções detalhadas estão em [Desenvolvimento local](docs/LOCAL-DEVELOPM
 Com o backend em execução, a verificação de saúde estará disponível em
 `http://localhost:3000/health`.
 
+A documentação interativa da API estará disponível em
+`http://localhost:3000/docs`. Ela permite informar um JWT com o botão
+**Authorize** e testar as rotas protegidas. A especificação OpenAPI em JSON
+fica disponível em `http://localhost:3000/docs-json`.
+
 ## API disponível
 
 | Método | Rota | Descrição |

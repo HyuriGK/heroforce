@@ -314,6 +314,34 @@ REGISTROS REALIZADOS
       endpoint de cadastro publico.
     - O hash deste commit foi registrado no ciclo seguinte.
 
+09. Commit: 438dda50684dc310fe12aff4cab79322e8fd0b82
+    Mensagem: docs(api): publica documentacao Swagger
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Swagger configurado em /docs com especificacao JSON em /docs-json.
+    - Esquema Bearer JWT, tags, exemplos de DTOs e respostas principais.
+    - README e guia local atualizados com instrucoes de uso da documentacao.
+
+    Arquivos ou modulos principais:
+    - backend/src/main.ts
+    - backend/src/auth/
+    - backend/src/users/users.controller.ts
+    - backend/src/projects/
+    - backend/src/health/health.controller.ts
+
+    Validacoes executadas:
+    - npm.cmd run typecheck: aprovado.
+    - npm.cmd run build: aprovado.
+    - npm.cmd test: 13 testes aprovados.
+    - npm.cmd run format:check: aprovado.
+    - OpenAPI em /docs-json: título, Bearer e rotas essenciais confirmados.
+
+    Observacoes:
+    - A documentação usa o módulo oficial @nestjs/swagger.
+    - O hash deste commit foi registrado no ciclo seguinte.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

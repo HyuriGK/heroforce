@@ -79,8 +79,8 @@ http://localhost:3000/docs
 ```
 
 Para testar uma rota protegida, faça login pela própria documentação, copie o
-`accessToken` retornado e use o botão **Authorize** com o formato
-`Bearer <accessToken>`.
+`accessToken` retornado e use o botão **Authorize**. Cole somente o token; a
+interface adiciona o prefixo `Bearer` automaticamente.
 
 Também estão disponíveis os comandos `npm.cmd run build`,
 `npm.cmd run typecheck`, `npm.cmd test` e `npm.cmd run format:check`.

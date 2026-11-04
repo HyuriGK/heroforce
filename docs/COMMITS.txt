@@ -418,6 +418,26 @@ REGISTROS REALIZADOS
     Observacoes:
     - As instrucoes mantem variaveis de ambiente reais fora do controle de versao.
 
+13. Commit: aa90ae0
+    Mensagem: chore(web): ignora artefatos gerados na formatacao
+    Data: 2026-11-04
+    Status: realizado
+
+    Codigo incluido:
+    - Exclusao de dist e node_modules da verificacao do Prettier no frontend.
+    - Registro do commit anterior de documentacao do portal.
+
+    Arquivos ou modulos principais:
+    - frontend/.prettierignore
+    - docs/COMMITS.txt
+
+    Validacoes executadas:
+    - npm.cmd run format:check: aprovado.
+    - git diff --check: concluido sem erros de whitespace.
+
+    Observacoes:
+    - Artefatos gerados nao devem influenciar a validacao de formatacao do fonte.
+
 Regra de atualizacao
 --------------------
 O commit mais recente sera registrado no ciclo seguinte, depois que seu hash

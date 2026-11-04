@@ -151,6 +151,25 @@ O frontend React disponibiliza login, cadastro de herói, dashboard com filtros
 e formulário administrativo para projetos. A UI trata carregamento, lista vazia
 e erro; as permissões continuam sendo confirmadas obrigatoriamente pela API.
 
+## Roteiro de validação ponta a ponta
+
+Use contas locais descartáveis e siga este roteiro antes de uma demonstração:
+
+1. Confirme `GET /health` com resposta `database: up`.
+2. Cadastre um herói pela tela `/register` e confirme que o papel retornado é
+   `hero`.
+3. Crie uma conta administrativa pelo seed controlado descrito acima e entre na
+   aplicação com ela.
+4. Crie um projeto atribuindo o herói e valores inteiros para as seis metas.
+5. Confira se o progresso apresentado é a média arredondada das metas.
+6. Entre como herói e confirme que somente os projetos sob sua responsabilidade
+   estão visíveis, sem ações administrativas.
+7. Pela API ou Swagger, confirme que o herói recebe `403 Forbidden` ao tentar
+   criar, editar ou excluir projetos e ao acessar `GET /users/heroes`.
+
+Não reutilize senhas de demonstração fora do ambiente local e não as registre
+no repositório.
+
 ## Segurança
 
 Os valores de `.env.example` são adequados apenas para desenvolvimento local.
